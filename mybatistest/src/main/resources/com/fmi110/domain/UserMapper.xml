@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 习惯命名方式 : 包名 + 映射文件名-->
+<mapper namespace="com.fmi110.domain.UserMapper">
+
+    <!--parameterType :     指定调用时传入的参数类型-->
+    <!--useGeneratedKeys :  使用数据库底层的子增长策略 , 需要数据库底层的支持 -->
+    <insert id="save" parameterType="user" useGeneratedKeys="true" keyProperty="id">
+        insert INTO tb_user(name,sex,age) VALUES (#{name},#{sex},#{age})
+    </insert>
+
+</mapper>
